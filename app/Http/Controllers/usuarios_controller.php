@@ -112,75 +112,7 @@ class usuarios_controller extends Controller
         return redirect()->route('admin.usuarios.index');
     }
 
-    public function webstore()
-    {
 
-        $id = $_POST['id'];
-        $nombre = $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-        $genero = $_POST['genero'];
-        $direccion = $_POST['direccion'];
-        $telefono = $_POST['telefono'];
-        $email = $_POST['email'];
-        $tipo = $_POST['tipo'];
-        $password = $_POST['password'];
-        $imagen  = $_POST['imagen'];    
-
-        //$path = "imagenes/$nombre.jpg";
-        //$url = "http://$hostname_localhost/ejemploBDRemota/$path";
-        $path = "../plugin/imagenes/".$apellido . '_' . $nombre . '_' . $id.".jpg";
-        file_put_contents($path,base64_decode($imagen));
-        $bytesArchivo=file_get_contents($path);
-
-        echo "registra";
-
-    }
-
-
-    public function webstoreLa(user_request $request)
-    {
-
-        $usuario = new User($request->all());
-
-        //dd($usuario);
-
-        if($request->file('imagen'))
-         {
-
-            //echo "entro";
-                //Inicio Imagen
-            $file = $request->file('imagen');
-            $name = $request->apellido . '_' . $request->nombre . '_' . $request->id . '.' . $file->getClientOriginalExtension();
-            //$path = '.186.81.113.40/rapihealth/public/plugin/imagenes/';
-            $path = public_path() . '\plugin\imagenes';
-            $file->move($path, $name);
-
-            //echo $path;
-                //Fin Imagen 
-            $usuario->imagen = $name;  
-        }else{
-            if ($request->genero == 'masculino') {
-                $usuario->imagen = 'masculino.jpg';
-            }else{
-                $usuario->imagen = 'femenino.jpg';
-            }
-        }
-        $usuario->password = bcrypt($request->password);
-        
-        if($usuario->save()){
-            echo "registra";
-        }else {
-            echo "noregistra";
-        }
-        
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -209,33 +141,6 @@ class usuarios_controller extends Controller
         return view('pagina.funcionalidad.admin.usuarios.edit')->with('user', $user);
     }
 
-    public function Webedit($id)
-    {   
-
-        $json = array();
-        $array = explode("_", $id);
-        $id = $array[0];
-        if (!empty($array[1])) {
-            $id2 = $array[1];
-        }else{
-            $id2 = 0;
-        }
-
-        $user = User::find($id);
-        $user->id2 = $id2;
-        //dd($user);   
-        //return view('pagina.funcionalidad.admin.usuarios.edit')->with('user', $user);
-        $json['usuario'][] = $user;
-        return json_encode($json);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $usuario = User::find($id);
@@ -244,7 +149,6 @@ class usuarios_controller extends Controller
         $usuario->nombre = $request->nombre;
         $usuario->apellido = $request->apellido;
         $usuario->genero = $request->genero;
-        $usuario->direccion = $request->direccion;
         $usuario->telefono = $request->telefono;
         $usuario->email = $request->email;
         $usuario->password = bcrypt($request->password);

@@ -3,9 +3,7 @@
 @section('titulo', 'Usuarios')
 
 @section('contenido')
-
-		@include('pagina.funcionalidad.nav')
-		
+<br><br>		
 		@if (Auth::user())
 
 		<section id="contact">
@@ -13,7 +11,7 @@
 		        <h3 class="text-center text-uppercase text-secondary mb-0">Ejercicios</h3>
 		        	<hr class="star-dark mb-5">
 		        <div class="row">
-		          	<div class="col-lg-8 mx-auto">
+		          	<div class="col-lg-12 mx-auto">
 		          		<div id="accordion" role="tablist">
 							  <div class="card">
 							    <div class="card-header" role="tab" id="headingOne">
@@ -62,7 +60,7 @@
 		          		</div>
 	          	</div>
           	</div>
-      	</section>/
+      	</section>
 
 			@else
 

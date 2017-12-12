@@ -8,9 +8,7 @@
 
 @section('contenido')
 
-
-		@include('pagina.funcionalidad.nav')
-
+<br><br>
 		@if (Auth::user())
 
 			<section id="contact">

@@ -4,7 +4,6 @@
 
 @section('contenido')
 
-	@include('pagina.funcionalidad.nav')
 <br><br><br>
 <section id="contact">
   	<div class="container">

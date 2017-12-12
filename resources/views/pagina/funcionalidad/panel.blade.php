@@ -9,8 +9,6 @@
 
 	<div id="wrapper">
 
-		@include('pagina.funcionalidad.nav')
-
 		@if (Auth::user())
 		
 		@if(Auth::user()->tipo != "administrador")
