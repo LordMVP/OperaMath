@@ -1,10 +1,5 @@
 <?php
 
-Route::get('test', function () {
-    return view('welcome');
-});
-
-
 Route::get('/', ['as' => 'index', function () {
 	return view('pagina.index');
 }]);
