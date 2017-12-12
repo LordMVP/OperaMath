@@ -64,3 +64,8 @@ Route::group(['prefix' => 'admin'], function()
 {
 		Route::resource('ejercicios', 'ejercicios_controller');
 });
+
+Route::get('error', [
+	'uses'	=>	'errores_controller@index',
+	'as'	=>	'error.pagina'
+	]);
