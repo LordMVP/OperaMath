@@ -5,6 +5,9 @@
           Menu
           <i class="fa fa-bars"></i>
         </button>
+        <div class="pull-left info">
+            <p></p>
+          </div>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
@@ -13,9 +16,22 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Videos">Videos</a>
             </li>
+        	@if(Auth::user())
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" >{{ Auth::user()->nombre . ' ' . Auth::user()->apellido }}</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('pagina.logout') }}">Salir</a>
+            </li>
+            @else          
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('pagina.login') }}">Ingreso</a>
             </li>
+			@endif  
+			@if(Auth::user())
+				@if(Auth::user()->tipo == 'Administrador')
+				@endif
+			@endif
           </ul>
         </div>
       </div>

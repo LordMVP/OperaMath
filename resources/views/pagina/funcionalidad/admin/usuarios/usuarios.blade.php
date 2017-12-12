@@ -4,10 +4,6 @@
 
 @section('contenido')
 
-<div class="funcionalidad">
-
-	<div id="wrapper">
-
 		@include('pagina.funcionalidad.nav')
 		
 		@if (Auth::user())

@@ -4,23 +4,20 @@
 
 @section('contenido')
 
-<div class="funcionalidad">
-
-	<div id="wrapper">
-
-		@include('pagina.funcionalidad.nav')
+	@include('pagina.funcionalidad.nav')
 		
 		@if (Auth::user())
-
+<section id="contact">
+<div class="container">
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Editar Usuario - {!! $user->nombre . ' ' . $user->apellido!!}</h3>
+					<h3 class="text-center text-uppercase text-secondary mb-0">Editar Usuario - {!! $user->nombre . ' ' . $user->apellido!!}</h3>
 				</div>
 			</div>
 			
 			<div class="row">
-				<div class="col-lg-10 col-md-6">
+				<div class="col-lg-8 mx-auto">
 
 					{!! Form::open(['route' => ['admin.usuarios.update', $user], 'method' => 'PUT', 'files' => true]) !!}
 					{!! Form::hidden('id2', $user->id2, ['class' => 'form-control', 'placeholder' => 'Numero De Cedula', 'required']) !!}
@@ -46,11 +43,6 @@
 					</div>
 
 					<div class="form-group">
-						{!! Form::label('direccion', 'Direccion') !!}
-						{!! Form::text('direccion', $user->direccion, ['class' => 'form-control', 'placeholder' => 'Cra 8 No 20 - 10', 'required']) !!}
-					</div>
-
-					<div class="form-group">
 						{!! Form::label('telefono', 'Telefono') !!}
 						{!! Form::text('telefono', $user->telefono, ['class' => 'form-control', 'placeholder' => '325698785', 'required']) !!}
 					</div>
@@ -67,7 +59,7 @@
 					
 					<div class="form-group">
 						{!! Form::label('tipo', 'Nivel De Usuario') !!}
-						{!! Form::select('tipo', ['administrador' => 'Administrador', 'empleado' => 'Empleado', 'jefe' => 'Jefe', 'paciente' => 'Paciente'], $user->tipo, ['class' => 'form-control', 'required'], $user->tipo) !!}
+						{!! Form::select('tipo', ['Administrador' => 'Administrador', 'Estudiante' => 'Estudiante'], $user->tipo, ['class' => 'form-control', 'required'], $user->tipo) !!}
 					</div>
 					
 					<div class="form-group">
@@ -101,11 +93,9 @@
 			</div>
 
 			@endif
-
-		</div>
-	</div>
 </div>
-
+		</div>
+</section>
 @endsection
 
 

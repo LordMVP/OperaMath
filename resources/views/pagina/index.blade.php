@@ -86,7 +86,7 @@
               <h3 class="text-secondary text-uppercase mb-0">Sumas</h3>
               <hr class="star-dark mb-5">
               	<video width="100%" height="80%" controls>
-				  	<source src="{{ asset('plugin/OperaMath/img/portfolio/viddivision.mp4') }}" type="video/mp4">
+				  	<source src="{{ asset('plugin/OperaMath/img/portfolio/vidsuma.mp4') }}" type="video/mp4">
 				</video>
               <p class="mb-5"></p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
@@ -110,7 +110,7 @@
               <h3 class="text-secondary text-uppercase mb-0">Restas</h3>
               <hr class="star-dark mb-5">
               	<video width="100%" height="80%" controls>
-				  	<source src="{{ asset('plugin/OperaMath/img/portfolio/viddivision.mp4') }}" type="video/mp4">
+				  	<source src="{{ asset('plugin/OperaMath/img/portfolio/vidresta.mp4') }}" type="video/mp4">
 				</video>
               <p class="mb-5"></p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">

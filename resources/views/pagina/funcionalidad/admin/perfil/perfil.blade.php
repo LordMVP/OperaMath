@@ -1,6 +1,6 @@
 @extends('pagina.principal.principal')
 
-@section('titulo', 'Atender')
+@section('titulo', 'Perfil')
 
 @section('jss')
 
@@ -8,67 +8,49 @@
 
 @section('contenido')
 
-<div class="funcionalidad">
-
-	<div id="wrapper">
 
 		@include('pagina.funcionalidad.nav')
 
 		@if (Auth::user())
 
-		<div id="page-wrapper">
-			<div class="row">
-				<div class="col-lg-12">
-					<h3 class="page-header">Informacion {{ Auth::user()->tipo }} </h3>
-				</div>
-			</div>
+			<section id="contact">
+		      <div class="container">
+		        <h3 class="text-center text-uppercase text-secondary mb-0">Informacion {{ Auth::user()->tipo }}</h3>
+		        <hr class="star-dark mb-5">
+		        <div class="row">
+		          <div class="col-lg-8 mx-auto">
 
-			<div class="row">
-				<div class="well">
-					<h4 class="text-center">Informacion Personal</h4>
-					<div class="row">
-						<div class="col-xs-5 col-md-2">
-							<a href="#" class="thumbnail">
-								
-								<img src="{{ asset('plugin/imagenes/' . Auth::user()->imagen) }}" >	
-							</a>
-						</div>
-						<div class="col-xs-4 col-md-1">
-							<strong>Nombre</strong><br><br>
-							<strong>Apellido</strong><br><br>
-							<strong>Direccion</strong>
-						</div>
-						<div class="col-xs-4 col-md-3">
-							<span id=""> {{ Auth::user()->nombre }} </span><br><br>
-							<span id=""> {{ Auth::user()->apellido }} </span><br><br>
-							<span id=""> {{ Auth::user()->direccion }} </span>
-						</div>	
-						<div class="col-xs-4 col-md-1">
-							<strong>Telefono</strong><br><br>
-							<strong>Email</strong><br>
-						</div>	
-						<div class="col-xs-5 col-md-3">
-							<span id=""> {{ Auth::user()->telefono }} </span><br><br>
-							<span id=""> {{ Auth::user()->email }} </span><br>
-						</div>
-						<br><br><br><br><br><br><br><br>
-						&nbsp;&nbsp;&nbsp; 
-						@if (Auth::user()->tipo == "medico")
-						<a title="Editar" href=" {{ route('admin.medicos.edit', Auth::user()->id . '_1') }} " class="text-right glyphicon glyphicon-pencil btn btn-info"></a>
-						@else
-						<a title="Editar" href=" {{ route('admin.usuarios.edit', Auth::user()->id . '_1') }} " class="text-right glyphicon glyphicon-pencil btn btn-info"></a>
-						@endif	
+					<div class="col-12 mx-8">
+						<a href="#" class="thumbnail">
+							<img style="width: 25%; height: 25%;" src="{{ asset('plugin/imagenes/' . Auth::user()->imagen) }}" >	
+						</a>
 					</div>
-				</div>
-			</div>	
-			<hr>	
-			<div class="row">
-				<div class="col-lg-12">
+					<div class="col-12 mx-8">
+						<strong>Nombre</strong><br>
+						<span id=""> {{ Auth::user()->nombre }} </span><br><br>
+						<strong>Apellido</strong><br>
+						<span id=""> {{ Auth::user()->apellido }} </span><br><br>
+						<strong>Direccion</strong><br>
+						<span id=""> {{ Auth::user()->direccion }} </span>
+					</div>
+					<div class="col-12 mx-8">
+						<strong>Telefono</strong><br>
+						<span id=""> {{ Auth::user()->telefono }} </span><br><br>
+						<strong>Email</strong><br>
+						<span id=""> {{ Auth::user()->email }} </span><br>
+					</div>	
 
-				</div>
-				<!-- /.col-lg-12 -->
-			</div>
-			<!-- /.row -->
+					<br>
+					@if (Auth::user()->tipo == "medico")
+					<a title="Editar" href=" {{ route('admin.medicos.edit', Auth::user()->id . '_1') }} " class="text-right glyphicon glyphicon-pencil btn btn-info">Editar</a>
+					@else
+					<a title="Editar" href=" {{ route('admin.usuarios.edit', Auth::user()->id . '_1') }} " class="text-right glyphicon glyphicon-pencil btn btn-info">Editar</a>
+					@endif	
+
+		          </div>
+		        </div>
+		      </div>
+		    </section>
 
 			@else
 
@@ -77,10 +59,6 @@
 			</script>
 
 			@endif
-
-		</div>
-	</div>
-
 
 	@endsection
 
