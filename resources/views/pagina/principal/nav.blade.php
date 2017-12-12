@@ -17,6 +17,14 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Videos">Videos</a>
             </li>
         	@if(Auth::user())
+        	@if(Auth::user()->tipo == 'Administrador')
+        	<li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('panel') }}">Reportes</a>
+            </li>
+			@endif
+			<li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.ejercicios.index') }}">Ejercicios</a>
+            </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" >{{ Auth::user()->nombre . ' ' . Auth::user()->apellido }}</a>
             </li>
@@ -28,10 +36,6 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('pagina.login') }}">Ingreso</a>
             </li>
 			@endif  
-			@if(Auth::user())
-				@if(Auth::user()->tipo == 'Administrador')
-				@endif
-			@endif
           </ul>
         </div>
       </div>

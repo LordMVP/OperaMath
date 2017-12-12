@@ -64,3 +64,8 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::resource('perfil', 'perfil_controller');
 
 });
+
+Route::group(['prefix' => 'admin'], function()
+{
+		Route::resource('ejercicios', 'ejercicios_controller');
+});
