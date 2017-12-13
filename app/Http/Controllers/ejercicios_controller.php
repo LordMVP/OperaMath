@@ -33,6 +33,7 @@ class ejercicios_controller extends Controller
                 WHERE
                         resp.ejer_id = ejer.ejer_id
                         and ejer.tipo = 'suma'
+                        and resp.id = '" . Auth::user()->id . "'
                 group BY
                         ejer.ejer_nombre";
         $lsuma = DB::select($sql);
@@ -49,7 +50,8 @@ class ejercicios_controller extends Controller
                 WHERE
                         resp.ejer_id = ejer.ejer_id
                         and ejer.tipo = 'resta'
-                group BY
+                        and resp.id = '" . Auth::user()->id . "'
+                GROUP BY
                         ejer.ejer_nombre";
         $lresta = DB::select($sqlr);
 
@@ -65,6 +67,7 @@ class ejercicios_controller extends Controller
                 WHERE
                         resp.ejer_id = ejer.ejer_id
                         and ejer.tipo = 'multiplicacion'
+                        and resp.id = '" . Auth::user()->id . "'
                 group BY
                         ejer.ejer_nombre";
         $lmulti = DB::select($sqlm);
@@ -81,6 +84,7 @@ class ejercicios_controller extends Controller
                 WHERE
                         resp.ejer_id = ejer.ejer_id
                         and ejer.tipo = 'division'
+                        and resp.id = '" . Auth::user()->id . "'
                 group BY
                         ejer.ejer_nombre";
         $ldivi = DB::select($sqld);
