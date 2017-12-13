@@ -28,8 +28,6 @@
 						<span id=""> {{ Auth::user()->nombre }} </span><br><br>
 						<strong>Apellido</strong><br>
 						<span id=""> {{ Auth::user()->apellido }} </span><br><br>
-						<strong>Direccion</strong><br>
-						<span id=""> {{ Auth::user()->direccion }} </span>
 					</div>
 					<div class="col-12 mx-8">
 						<strong>Telefono</strong><br>

@@ -15,13 +15,11 @@
 
 	@include('pagina.principal.nav')
 	
+	@yield('contenido')
+
 	<div class="text-center">
 		@include('flash::message')
 	</div>
-	
-
-	@yield('contenido')
-
 
 	@include('pagina.principal.footer')
 

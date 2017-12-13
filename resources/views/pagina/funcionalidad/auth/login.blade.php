@@ -8,7 +8,7 @@
 @include('pagina.principal.nav')
 
   <br>
-<section id="contact">
+	<section id="ingresar">
       <div class="container">
         <h3 class="text-center text-uppercase text-secondary mb-0">Ingresar</h3>
         <hr class="star-dark mb-5">
@@ -35,13 +35,14 @@
               <br>
               <div id="success"></div>
               <div class="form-group">
-              		{!! Form::submit('Login', ['class' => 'btn btn-primary btn-xl']) !!}
+              		{!! Form::submit('Ingreso', ['class' => 'btn btn-primary']) !!}
               </div>
    			{!! Form::close() !!}
           </div>
         </div>
       </div>
     </section>
+
 
 {!! Form::close() !!}
 

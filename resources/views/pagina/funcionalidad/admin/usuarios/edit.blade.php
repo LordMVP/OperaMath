@@ -3,16 +3,15 @@
 @section('titulo', 'Editar Usuario')
 
 @section('contenido')
-
-	@include('pagina.funcionalidad.nav')
 		
 		@if (Auth::user())
+		<br><br>
 <section id="contact">
 <div class="container">
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="text-center text-uppercase text-secondary mb-0">Editar Usuario - {!! $user->nombre . ' ' . $user->apellido!!}</h3>
+					<h3 class="text-center text-uppercase text-secondary mb-0">Editar {{ Auth::user()->tipo }} - {!! $user->nombre . ' ' . $user->apellido!!}</h3>
 				</div>
 			</div>
 			
@@ -56,12 +55,17 @@
 						{!! Form::label('password', 'Contraseña') !!}
 						{!! Form::password('password', ['class' => 'form-control', 'placeholder' => '***************', 'required']) !!}
 					</div>
-					
+					@if(Auth::user()->tipo == "Estudiante")
+					<div class="form-group">
+						{!! Form::label('tipo', 'Nivel De Usuario') !!}
+						{!! Form::select('tipo', ['Estudiante' => 'Estudiante'], $user->tipo, ['class' => 'form-control', 'required'], $user->tipo) !!}
+					</div>
+					@else
 					<div class="form-group">
 						{!! Form::label('tipo', 'Nivel De Usuario') !!}
 						{!! Form::select('tipo', ['Administrador' => 'Administrador', 'Estudiante' => 'Estudiante'], $user->tipo, ['class' => 'form-control', 'required'], $user->tipo) !!}
 					</div>
-					
+					@endif
 					<div class="form-group">
 						{!! Form::label('imagen', 'Imagen') !!}
 						{!! Form::file('imagen', ['class' => '']) !!}

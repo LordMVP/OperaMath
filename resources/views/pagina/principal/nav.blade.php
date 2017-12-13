@@ -19,6 +19,9 @@
         	@if(Auth::user())
         	@if(Auth::user()->tipo == 'Administrador')
         	<li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.usuarios.index') }}">Usuarios</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('admin.ejercicios.index') }}">Reportes</a>
             </li>
 			@endif

@@ -3,66 +3,70 @@
 @section('titulo', 'Usuarios')
 
 @section('contenido')
-
-		@include('pagina.funcionalidad.nav')
 		
 		@if (Auth::user())
-
+<br><br>
+<section id="contact">
+	<div class="container">
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header">Listado Usuarios</h3>
+					<h3 class="text-center text-uppercase text-secondary mb-0">Listado Usuarios</h3>
 				</div>
 			</div>
-			<a href=" {{ route('admin.usuarios.create') }} " class="btn btn-info"> Registrar Usuario</a>
-			<hr>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="panel panel-default">
-						<!-- /.panel-heading -->
-						<div class="panel-body">
-							<div class="dataTable_wrapper">
-								<table class="table table-striped table-bordered table-hover" id="dataTables-example">
-									<thead>
-										<tr>
-											<th>Cedula</th>
-											<th>Nombre</th>
-											<th>Apellido</th>
-											<th>Direccion</th>
-											<th>Telefono</th>
-											<th>Email</th>
-											<th>Accion</th>
-										</tr>
-									</thead>
-									<tbody>
-										@foreach ($users as $user)
-										<tr class="odd gradeX">
-											<td>{{ $user->id }}</td>
-											<td>{{ $user->nombre }}</td>
-											<td>{{ $user->apellido }}</td>
-											<td>{{ $user->direccion }}</td>
-											<td>{{ $user->telefono }}</td>
-											<td>{{ $user->email }}</td>
-											<td>
-												<a href=" {{ route('admin.usuarios.edit', $user->id) }} " class="glyphicon glyphicon-pencil btn btn-info"></a>
-												<a href=" {{ route('admin.usuarios.destroy', $user->id) }} " onclick="return confirm('¿Seguro Desea Eliminarlo?')" class="glyphicon glyphicon-trash btn btn-danger"></a>
-											</td>
-										</tr>
-										@endforeach
-									</tbody>
-								</table>
+
+			<div id="page-wrapper">
+				<a href=" {{ route('admin.usuarios.create') }} " class="btn btn-info"> Registrar Usuario</a>
+				<hr>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<!-- /.panel-heading -->
+							<div class="panel-body">
+								<div class="dataTable_wrapper">
+									<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+										<thead>
+											<tr>
+												<th>Cedula</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Telefono</th>
+												<th>Email</th>
+												<th>Accion</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach ($users as $user)
+											<tr class="odd gradeX">
+												<td>{{ $user->id }}</td>
+												<td>{{ $user->nombre }}</td>
+												<td>{{ $user->apellido }}</td>
+												<td>{{ $user->telefono }}</td>
+												<td>{{ $user->email }}</td>
+												<td>
+													<a href=" {{ route('admin.usuarios.edit', $user->id) }} " class="glyphicon glyphicon-pencil btn btn-info"></a>
+													<a href=" {{ route('admin.usuarios.destroy', $user->id) }} " onclick="return confirm('¿Seguro Desea Eliminarlo?')" class="glyphicon glyphicon-trash btn btn-danger"></a>
+												</td>
+											</tr>
+											@endforeach
+										</tbody>
+									</table>
+								</div>
+								<div class="text-left">
+									{!! $users->render() !!}
+								</div>
+								<!-- /.table-responsive -->
 							</div>
-							<div class="text-left">
-								{!! $users->render() !!}
-							</div>
-							<!-- /.table-responsive -->
+							<!-- /.panel-body -->
 						</div>
-						<!-- /.panel-body -->
+						<!-- /.panel -->
 					</div>
-					<!-- /.panel -->
+					<!-- /.col-lg-12 -->
 				</div>
-				<!-- /.col-lg-12 -->
 			</div>
+		</div>
+	</div>
+</section>
 			<!-- /.row -->
 
 			@else
