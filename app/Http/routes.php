@@ -73,3 +73,9 @@ Route::get('error', [
     'uses' => 'errores_controller@index',
     'as'   => 'error.pagina',
 ]);
+
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::resource('reportes', 'reportes_controller');
+
+});

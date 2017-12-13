@@ -961,7 +961,7 @@
                                             	<ul class="list-group">
 												  	<li class="list-group-item">
 														  	Ejercicio 1
-														  	<span style="display: none;" id="ejer_sol_divi1">| Solucion correcta 2 | </span>
+														  	<span style="display: none;" id="ejer_sol_divi1">| Solucion correcta 3 | </span>
 														  	<span style="display: none;" id="vejer_divi1" class="badge badge-pill badge-success">Correcto</span>
 														  	<span style="display: none;" id="fejer_divi1" class="badge badge-pill badge-danger">Incorrecto</span>
 												  	</li>
@@ -1006,13 +1006,13 @@
 	                                                    <div class="alert alert-success" role="alert">
 															  <h4 class="alert-heading">Seleccione!</h4><hr>
 															  <table style="margin: 20px; width: 100%">
-	                                                    			<tr><input type="hidden" name="divi1_res" id="divi1_res" required="" value="4">
+	                                                    			<tr><input type="hidden" name="divi1_res" id="divi1_res" required="" value="3">
 	                                                    				<input type="hidden" name="divi_ejer1_id" id="divi_ejer1_id" value="16">
 	                                                    				<th>	                                                    					
 	                                                    					<input type="radio" name="divi1" id="divi1" required="" value="12"> <h4>12</h4>
 	                                                    				</th>
 	                                                    				<th>
-	                                                    					<input type="radio" name="divi1" id="divi1" required="" value="4"> <h4>4</h4>
+	                                                    					<input type="radio" name="divi1" id="divi1" required="" value="3"> <h4>3</h4>
 	                                                    				</th>
 	                                                    			</tr>
 	                                                    			<tr>
@@ -1038,7 +1038,7 @@
 	                                                    <div class="alert alert-success" role="alert">
 															  <h4 class="alert-heading">Seleccione!</h4><hr>
 															  <table style="margin: 20px; width: 100%">
-	                                                    			<tr><input type="hidden" name="divi2_res" id="divi2_res" required="" value="5">
+	                                                    			<tr><input type="hidden" name="divi2_res" id="divi2_res" required="" value="4">
 	                                                    				<input type="hidden" name="divi_ejer2_id" id="divi_ejer2_id" value="17">
 	                                                    				<th>	                                                    					
 	                                                    					<input type="radio" name="divi2" id="divi2" required="" value="6"> <h4>6</h4>
@@ -1052,7 +1052,7 @@
 	                                                    					<input type="radio" name="divi2" id="divi2" required="" value="15"> <h4>15</h4>
 	                                                    				</th>
 	                                                    				<th>
-	                                                    					<input type="radio" name="divi2" id="divi2" required="" value="5"> <h4>5</h4>
+	                                                    					<input type="radio" name="divi2" id="divi2" required="" value="4"> <h4>4</h4>
 	                                                    				</th>
 	                                                    			</tr>
 	                                                    	</table>
@@ -1102,10 +1102,10 @@
 	                                                    <div class="alert alert-success" role="alert">
 															  <h4 class="alert-heading">Seleccione!</h4><hr>
 															  <table style="margin: 20px; width: 100%">
-	                                                    			<tr><input type="hidden" name="divi4_res" id="divi4_res" required="" value="2">
+	                                                    			<tr><input type="hidden" name="divi4_res" id="divi4_res" required="" value="5">
 	                                                    				<input type="hidden" name="divi_ejer4_id" id="divi_ejer4_id" value="19">
 	                                                    				<th>	                                                    					
-	                                                    					<input type="radio" name="divi4" id="divi4" required="" value="18"> <h4>8</h4>
+	                                                    					<input type="radio" name="divi4" id="divi4" required="" value="5"> <h4>5</h4>
 	                                                    				</th>
 	                                                    				<th>
 	                                                    					<input type="radio" name="divi4" id="divi4" required="" value="12"> <h4>12</h4>
@@ -1134,7 +1134,7 @@
 	                                                    <div class="alert alert-success" role="alert">
 															  <h4 class="alert-heading">Seleccione!</h4><hr>
 															  <table style="margin: 20px; width: 100%">
-	                                                    			<tr><input type="hidden" name="divi5_res" id="divi5_res" required="" value="12">
+	                                                    			<tr><input type="hidden" name="divi5_res" id="divi5_res" required="" value="3">
 	                                                    				<input type="hidden" name="divi_ejer5_id" id="divi_ejer5_id" value="20">
 	                                                    				<th>	                                                    					
 	                                                    					<input type="radio" name="divi5" id="divi5" value="6"> <h4>6</h4>
@@ -1145,7 +1145,7 @@
 	                                                    			</tr>
 	                                                    			<tr>
 	                                                    				<th>
-	                                                    					<input type="radio" name="divi5" id="divi5" value="12"> <h4>12</h4>
+	                                                    					<input type="radio" name="divi5" id="divi5" value="3"> <h4>3</h4>
 	                                                    				</th>
 	                                                    				<th>
 	                                                    					<input type="radio" name="divi5" id="divi5" value="7"> <h4>7</h4>
